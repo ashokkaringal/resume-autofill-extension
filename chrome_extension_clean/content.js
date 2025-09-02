@@ -1863,7 +1863,7 @@ window.debugCurrentForm = function() {
     
     // Field analysis
     const fieldType = getFieldType(element);
-    const fieldValue = getFieldValue(element);
+    const fieldValue = getFieldValue(fieldType, element);
     const questionText = getQuestionText(element);
     
     console.log('Job Application Auto-Filler: Detected Field Type:', fieldType);
