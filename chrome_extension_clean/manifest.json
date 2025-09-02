@@ -16,7 +16,9 @@
     "*://*.bamboohr.com/*",
     "*://*.icims.com/*",
     "*://*.myworkdayjobs.com/*",
-    "*://*.jobs.lever.co/*"
+    "*://*.jobs.lever.co/*",
+    "*://*.indeed.com/*",
+    "*://*.smartapply.indeed.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -32,6 +34,8 @@
         "*://*.icims.com/*",
         "*://*.myworkdayjobs.com/*",
         "*://*.jobs.lever.co/*",
+        "*://*.indeed.com/*",
+        "*://*.smartapply.indeed.com/*",
         "<all_urls>"
       ],
       "js": ["content.js"],
