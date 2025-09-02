@@ -629,9 +629,32 @@
       return 'text';
     }
 
-    // Get appropriate value for field type - COMPREHENSIVE VERSION
+    // Get appropriate value for field type - COMPREHENSIVE VERSION WITH RADIO BUTTON ENHANCEMENT
     function getFieldValue(fieldType, element) {
       if (!userProfile) return null;
+
+      // SPECIAL HANDLING FOR RADIO BUTTONS - Use question text for better matching
+      if (fieldType === 'radio') {
+        console.log('Job Application Auto-Filler: === RADIO BUTTON VALUE DETECTION ===');
+        
+        // Get the question text for this radio group
+        const questionText = getQuestionText(element);
+        console.log('Job Application Auto-Filler: Radio question text:', questionText);
+        
+        if (questionText) {
+          // Try to find a context match based on the question text
+          const contextMatch = findContextAwareMatch(element, [questionText.toLowerCase()]);
+          if (contextMatch) {
+            console.log(`Job Application Auto-Filler: Radio context match found: ${contextMatch}`);
+            const profileValue = getProfileValue(contextMatch);
+            console.log(`Job Application Auto-Filler: Radio profile value: ${profileValue}`);
+            return profileValue;
+          }
+        }
+        
+        // Fallback: try to find match based on field identifiers
+        console.log('Job Application Auto-Filler: Falling back to field identifier matching for radio');
+      }
 
       // Get ALL possible field identifiers
       const fieldName = element.name || '';
@@ -946,7 +969,7 @@
       return null;
     }
     
-    // Match against your specific application questions - IMPROVED MATCHING
+    // Match against your specific application questions - IMPROVED MATCHING FOR RADIO BUTTONS
     function findApplicationQuestionMatch(questionText) {
       if (!userProfile || !userProfile.applicationQuestions) return null;
       
@@ -975,14 +998,24 @@
         }
       }
       
-      if (questionLower.includes('call center') || questionLower.includes('contact center') || questionLower.includes('service operations')) {
+      // ENHANCED RADIO BUTTON MATCHING - More flexible patterns
+      if (questionLower.includes('call center') || questionLower.includes('contact center') || questionLower.includes('service operations') || 
+          questionLower.includes('call centre') || questionLower.includes('customer service')) {
         console.log('Job Application Auto-Filler: Matched call center experience question');
         return 'callCenterExperience';
       }
       
-      if (questionLower.includes('managed a team') || questionLower.includes('team management') || questionLower.includes('managed')) {
+      if (questionLower.includes('managed a team') || questionLower.includes('team management') || questionLower.includes('managed') ||
+          questionLower.includes('lead a team') || questionLower.includes('supervise') || questionLower.includes('leadership')) {
         console.log('Job Application Auto-Filler: Matched team management question');
         return 'teamManagement';
+      }
+      
+      // ENHANCED SPONSORSHIP MATCHING - More flexible patterns
+      if (questionLower.includes('sponsorship') || questionLower.includes('visa') || questionLower.includes('h-1b') || 
+          questionLower.includes('employment visa') || questionLower.includes('work permit') || questionLower.includes('immigration')) {
+        console.log('Job Application Auto-Filler: Matched sponsorship question');
+        return 'requireSponsorship';
       }
       
       if (questionLower.includes('location') && questionLower.includes('work from')) {
@@ -1857,9 +1890,9 @@ window.debugCurrentForm = function() {
   console.log('Job Application Auto-Filler: === END FORM ANALYSIS ===');
 };
 
-// Add specific radio button debug function
+// Add specific radio button debug function - ENHANCED WITH VALUE TESTING
 window.debugRadioButtons = function() {
-  console.log('Job Application Auto-Filler: === RADIO BUTTON ANALYSIS ===');
+  console.log('Job Application Auto-Filler: === ENHANCED RADIO BUTTON ANALYSIS ===');
   
   const radioGroups = {};
   
@@ -1902,13 +1935,33 @@ window.debugRadioButtons = function() {
       if (questionText) {
         const contextMatch = findContextAwareMatch(firstRadio, []);
         console.log('Job Application Auto-Filler: Context match would be:', contextMatch);
+        
+        // Test what value would be assigned
+        if (contextMatch) {
+          const profileValue = getProfileValue(contextMatch);
+          console.log('Job Application Auto-Filler: Profile value would be:', profileValue);
+          
+          // Test if this value would match any radio option
+          const matchingOptions = radios.filter(radio => {
+            const radioValue = radio.value.toLowerCase();
+            const radioText = (radio.textContent || radio.innerText || '').toLowerCase();
+            const targetValue = profileValue.toLowerCase();
+            
+            return radioValue === targetValue || 
+                   radioText.includes(targetValue) || 
+                   radioValue.includes(targetValue) ||
+                   targetValue.includes(radioValue);
+          });
+          
+          console.log('Job Application Auto-Filler: Matching radio options:', matchingOptions.map(r => r.value));
+        }
       }
     }
     
     console.log('Job Application Auto-Filler: ---');
   });
   
-  console.log('Job Application Auto-Filler: === END RADIO ANALYSIS ===');
+  console.log('Job Application Auto-Filler: === END ENHANCED RADIO ANALYSIS ===');
 };
 
 // Add question text debug function - ENHANCED FOR INDEED
