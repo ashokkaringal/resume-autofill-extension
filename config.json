@@ -1,0 +1,79 @@
+{
+  "llm_provider": "openai",
+  "browser_type": "selenium",
+  "headless": false,
+  "timeout": 30,
+  "retry_attempts": 3,
+  "screenshot_on_error": true,
+  "wait_between_actions": 0.5,
+  "max_field_length": 1000,
+  "platform_specific": {
+    "linkedin": {
+      "field_selectors": {
+        "firstName": ["input[name='firstName']", "input[placeholder*='First name']"],
+        "lastName": ["input[name='lastName']", "input[placeholder*='Last name']"],
+        "email": ["input[name='email']", "input[type='email']"],
+        "phone": ["input[name='phone']", "input[type='tel']"]
+      },
+      "wait_time": 2
+    },
+    "greenhouse": {
+      "field_selectors": {
+        "firstName": ["input[name='first_name']", "input[id*='first_name']"],
+        "lastName": ["input[name='last_name']", "input[id*='last_name']"],
+        "email": ["input[name='email']", "input[type='email']"],
+        "phone": ["input[name='phone']", "input[type='tel']"]
+      },
+      "wait_time": 1.5
+    },
+    "workday": {
+      "field_selectors": {
+        "firstName": ["input[id*='firstName']", "input[name*='firstName']"],
+        "lastName": ["input[id*='lastName']", "input[name*='lastName']"],
+        "email": ["input[type='email']", "input[id*='email']"],
+        "phone": ["input[type='tel']", "input[id*='phone']"]
+      },
+      "wait_time": 3
+    }
+  },
+  "llm_settings": {
+    "openai": {
+      "model": "gpt-4",
+      "temperature": 0.1,
+      "max_tokens": 2000
+    },
+    "anthropic": {
+      "model": "claude-3-sonnet-20240229",
+      "temperature": 0.1,
+      "max_tokens": 2000
+    }
+  },
+  "resume_parsing": {
+    "max_file_size_mb": 50,
+    "supported_formats": [".pdf", ".docx", ".doc", ".txt"],
+    "text_cleaning": {
+      "remove_special_chars": true,
+      "normalize_whitespace": true,
+      "remove_empty_lines": true
+    }
+  },
+  "form_filling": {
+    "field_mapping": {
+      "firstName": ["firstName", "first_name", "firstname", "fname"],
+      "lastName": ["lastName", "last_name", "lastname", "lname"],
+      "email": ["email", "e-mail", "emailAddress"],
+      "phone": ["phone", "telephone", "mobile", "cell", "phoneNumber"],
+      "address": ["address", "street", "streetAddress"],
+      "city": ["city", "town"],
+      "state": ["state", "province", "region"],
+      "zip": ["zip", "postalCode", "postal_code", "zipCode"],
+      "country": ["country", "nation"]
+    },
+    "validation": {
+      "email_format": true,
+      "phone_format": true,
+      "required_fields": ["firstName", "lastName", "email"]
+    }
+  }
+}
+

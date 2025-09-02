@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Auto-Filler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <h1>🚀 Job Application Auto-Filler</h1>
+      <p>Automatically fill job application forms with one click</p>
+    </div>
+
+    <div class="popup-content">
+      <!-- Status Section -->
+      <section class="section status-section">
+        <h2>Extension Status</h2>
+        <div class="status-item">
+          <span class="status-label">Current Page:</span>
+          <span id="current-page-status" class="status-value">Unknown</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Platform Detected:</span>
+          <span id="platform-status" class="status-value">Unknown</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Form Detection:</span>
+          <span id="form-status" class="status-value">Unknown</span>
+        </div>
+      </section>
+
+      <!-- Platform Support Section -->
+      <section class="section">
+        <h2>Supported Platforms</h2>
+        <div class="platform-list">
+          <div class="platform-item">
+            <span class="platform-name">LinkedIn</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">Greenhouse</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">Workday</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">Lever</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">BambooHR</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">iCIMS</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">Generic Forms</span>
+            <span class="platform-status supported">✓ Supported</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instructions Section -->
+      <section class="section">
+        <h2>How to Use</h2>
+        <ol class="instructions-list">
+          <li>Navigate to a job application page</li>
+          <li>Look for the "Go Fill" button on the page</li>
+          <li>Click the button to automatically fill the form</li>
+          <li>Review and submit the application</li>
+        </ol>
+      </section>
+
+      <!-- Actions Section -->
+      <section class="section">
+        <h2>Actions</h2>
+        <button id="refresh-status" class="btn btn-primary">Refresh Status</button>
+        <button id="test-extension" class="btn btn-secondary">Test Extension</button>
+      </section>
+    </div>
+
+    <footer class="popup-footer">
+      <p>Made with ❤️ for job seekers</p>
+      <p class="version">v1.0.0</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

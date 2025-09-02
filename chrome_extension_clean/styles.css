@@ -1,0 +1,350 @@
+/* Styles for Job Application Auto-Filler Extension */
+
+/* Go Fill Button Styles */
+#go-fill-button {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 10000;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-width: 120px;
+}
+
+#go-fill-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+#go-fill-button:active {
+  transform: translateY(0);
+}
+
+.go-fill-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.go-fill-text {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.go-fill-progress {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Success and Error States */
+#go-fill-button.success {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+#go-fill-button.error {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+/* Popup Styles */
+.popup-container {
+  width: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #ffffff;
+  color: #333;
+}
+
+.popup-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.popup-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.popup-header p {
+  margin: 8px 0 0 0;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.section h2 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.form-group textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background: #5a6fd8;
+}
+
+.btn-primary {
+  background: #667eea;
+}
+
+.btn-secondary {
+  background: #6c757d;
+}
+
+.btn-success {
+  background: #28a745;
+}
+
+.btn-danger {
+  background: #dc3545;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.platform-list {
+  display: grid;
+  gap: 10px;
+}
+
+.platform-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.platform-name {
+  font-weight: 500;
+}
+
+.platform-status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.platform-status.supported {
+  background: #d4edda;
+  color: #155724;
+}
+
+.platform-status.unsupported {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.instructions-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.instructions-list li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.status-section {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.status-label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.status-value {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.popup-footer {
+  text-align: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  border-radius: 0 0 8px 8px;
+}
+
+.popup-footer p {
+  margin: 5px 0;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.version {
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .popup-container {
+    width: 350px;
+  }
+  
+  .popup-content {
+    padding: 15px;
+  }
+  
+  .section {
+    padding: 15px;
+  }
+  
+  #go-fill-button {
+    right: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .popup-container {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .section {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    background: #333;
+    border-color: #555;
+    color: #fff;
+  }
+  
+  .platform-item {
+    background: #333;
+    border-color: #555;
+  }
+  
+  .status-section {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .popup-footer {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+}

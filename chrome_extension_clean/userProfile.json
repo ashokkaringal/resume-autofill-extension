@@ -1,0 +1,216 @@
+{
+  "personalInfo": {
+    "firstName": "Ashok",
+    "lastName": "Jayaram",
+    "preferredFirstName": "Ashok",
+    "email": "ashok.karingal@gmail.com",
+    "phone": "+1 303-396-2388",
+    "linkedin": "https://www.linkedin.com/in/ashok-jayaram/",
+    "website": "",
+    "address": "435 Reflections Circle, #13, San Ramon, CA, 94583",
+    "city": "San Ramon",
+    "state": "CA",
+    "zip": "94583",
+    "country": "United States",
+    "currentLocation": "San Ramon, CA",
+    "willingToRelocate": "Yes",
+    "authorizedToWorkInUS": "Yes",
+    "requireSponsorship": "No",
+    "citizenship": "US Citizen",
+    "backgroundCheckConsent": "Yes",
+    "drugTestConsent": "Yes",
+    "nonCompeteRestriction": "No",
+    "veteranStatus": "No",
+    "disabilityStatus": "No",
+    "securityClearance": "No",
+    "driversLicense": "Yes",
+    "transportationAvailable": "Yes",
+    "maritalStatus": "Prefer not to answer",
+    "gender": "Prefer not to answer",
+    "ethnicity": "Prefer not to answer",
+    "dateOfBirth": "1979-07-12"
+  },
+  "availability": {
+    "startDate": "Within 3 weeks",
+    "noticePeriod": "2 weeks",
+    "remoteOrOnsitePreference": "Open to both",
+    "travelWillingness": "Up to 25%",
+    "shiftFlexibility": "Yes",
+    "overtimeAvailability": "Yes",
+    "weekendAvailability": "Yes",
+    "preferredWorkingHours": "Standard business hours"
+  },
+  "salary": {
+    "expectations": "Negotiable based on industry standards and experience",
+    "range": "$163K - $228K",
+    "equityOrBonus": "Open",
+    "hourlyRate": "N/A",
+    "willingToDiscussCompensation": "Yes"
+  },
+  "documents": {
+    "resume": "Ashok-Software-TPM-QA-Manager_AugVer1.pdf",
+    "coverLetter": "Tailored per job",
+    "additionalDocs": [
+      "References available upon request"
+    ]
+  },
+  "experience": {
+    "yearsOfExperience": "17+",
+    "relevantExperience": "QA Manager, Test Manager, Director QA roles",
+    "managementExperience": "Yes, managed 100+ team members",
+    "automationExperience": "Yes (Selenium, UiPath, Appium, TCL, Python, Java)",
+    "cloudExperience": "Yes (AWS, Oracle Cloud, GCP)",
+    "retailExperience": "Yes",
+    "bankingExperience": "Yes",
+    "telecomExperience": "Yes",
+    "healthcareExperience": "Yes",
+    "startupExperience": "Yes",
+    "enterpriseExperience": "Yes",
+    "contractExperience": "Yes",
+    "internationalExperience": "Yes"
+  },
+  "skills": {
+    "primarySkills": [
+      "QA Management",
+      "Test Automation",
+      "UiPath RPA",
+      "Selenium",
+      "Appium",
+      "Java",
+      "React",
+      "Python",
+      "SQL",
+      "Agile/Scrum",
+      "CI/CD",
+      "Cloud Testing"
+    ],
+    "tools": [
+      "Jira",
+      "Confluence",
+      "HP QC",
+      "Zephyr",
+      "GitHub",
+      "GitLab",
+      "Jenkins",
+      "Azure DevOps",
+      "Postman",
+      "BrowserStack",
+      "Sauce Labs"
+    ],
+    "aiTools": [
+      "Cursor IDE",
+      "ChatGPT",
+      "Copilot",
+      "AI for Test Data Generation",
+      "AI for Test Case Design"
+    ]
+  },
+  "preferences": {
+    "employmentType": "Full-Time",
+    "jobTitles": [
+      "QA Manager",
+      "Test Manager",
+      "Director of QA",
+      "Quality Engineering Manager"
+    ],
+    "industries": [
+      "Retail",
+      "Banking",
+      "Telecom",
+      "Healthcare",
+      "Technology"
+    ],
+    "companySizePreference": "Open",
+    "remotePreference": "Hybrid/Remote preferred",
+    "relocationPreference": "Yes, if required"
+  },
+  "screeningQuestions": {
+    "openToBackgroundCheck": "Yes",
+    "openToDrugTest": "Yes",
+    "felonyHistory": "No",
+    "misdemeanorHistory": "No",
+    "previousEmploymentWithCompany": "No",
+    "conflictOfInterest": "No",
+    "willingToTravel": "Yes",
+    "comfortableWithOvertime": "Yes",
+    "availabilityForInterview": "Within 1 week",
+    "desiredJobLocation": "California / Remote",
+    "authorizedToWorkWithoutRestriction": "Yes",
+    "willingToSignNDA": "Yes",
+    "willingToSignNonCompete": "Yes, if reasonable",
+    "ableToLiftWeight": "Yes, up to 20 lbs",
+    "comfortableWithShiftWork": "Yes",
+    "languages": ["English"],
+    "otherCertifications": [
+      "Cisco Certified Network Associate",
+      "Oracle Cloud Infrastructure Certified",
+      "Agile Scrum Master",
+      "UiPath RPA Bootcamp"
+    ]
+  },
+  "eeo": {
+    "gender": "Prefer not to answer",
+    "ethnicity": "Prefer not to answer",
+    "disability": "No",
+    "veteran": "No"
+  },
+  "consents": {
+    "backgroundCheckConsent": "Yes",
+    "drugTestConsent": "Yes",
+    "privacyPolicyConsent": "Yes",
+    "termsAndConditionsConsent": "Yes",
+    "dataStorageConsent": "Yes"
+  },
+  "applicationQuestions": {
+    "automationAI": {
+      "question": "What's the biggest automation or AI solution you've rolled out, and how did it save the day?",
+      "answer": "I implemented a comprehensive test automation framework using UiPath RPA and Selenium that saved the day by reducing manual regression time by 77%, boosting test coverage by 40%, and enabling faster, more confident releases across retail and supply chain platforms. It wasn't just a technical win—it transformed how QA collaborated globally, with reusable components, dashboards, and proactive defect prevention."
+    },
+    "processBuilding": {
+      "question": "Tell us about a process you built from scratch—what problem did it solve, and what did it actually deliver?",
+      "answer": "I built a complete QA process management system from scratch that solved the problem of inconsistent testing approaches across multiple global teams. It delivered standardized testing methodologies, centralized test case management, automated reporting dashboards, and measurable quality metrics. The system reduced defect escape rate by 35% and improved team productivity by 60% through better collaboration and reusable testing components."
+    },
+    "leadershipStyle": {
+      "question": "When you're running a process, what's your signature style (and would your team agree)?",
+      "answer": "My signature style is data-driven decision making with a focus on measurable outcomes and continuous improvement. My team would agree that I foster transparency, encourage feedback, and always keep delivery quality at the center. I believe in empowering team members, providing clear direction, and celebrating both individual and collective achievements while maintaining high standards."
+    },
+    "callCenterExperience": {
+      "question": "Do you have professional call center, contact center, or service operations experience?",
+      "answer": "No"
+    },
+    "teamManagement": {
+      "question": "Have you managed a team before?",
+      "answer": "Yes"
+    },
+    "workLocation": {
+      "question": "Where do you intend to work from?",
+      "answer": "California (CA)"
+    },
+    "workLocationDetails": {
+      "question": "If location not listed, where do you intend to work from?",
+      "answer": "435 Reflections Circle, #13, San Ramon, CA, 94583"
+    }
+  },
+  "commonQuestions": {
+    "automationExperience": {
+      "question": "Describe your experience with automation and AI solutions",
+      "answer": "I have extensive experience implementing automation and AI solutions in QA environments. I've led teams in developing UiPath RPA solutions, Selenium test automation frameworks, and AI-powered test data generation tools. My automation initiatives have consistently delivered 60-80% efficiency improvements and enabled teams to focus on higher-value testing activities."
+    },
+    "processImprovement": {
+      "question": "How do you approach process improvement and optimization?",
+      "answer": "I approach process improvement through systematic analysis, stakeholder engagement, and data-driven decision making. I start by identifying pain points, gathering metrics, and involving team members in solution design. I implement changes incrementally, measure results, and iterate based on feedback. This approach has delivered measurable improvements in efficiency, quality, and team satisfaction across multiple organizations."
+    },
+    "teamLeadership": {
+      "question": "What is your leadership philosophy and how do you motivate teams?",
+      "answer": "My leadership philosophy centers on servant leadership, empowerment, and results. I believe in creating an environment where team members can excel, providing clear goals and support, and recognizing achievements. I motivate teams by connecting their work to meaningful outcomes, providing growth opportunities, and fostering a culture of continuous learning and improvement."
+    },
+    "qualityAssurance": {
+      "question": "How do you ensure quality in your testing processes?",
+      "answer": "I ensure quality through a multi-layered approach: comprehensive test planning, automated testing frameworks, continuous monitoring, and regular process reviews. I establish clear quality metrics, implement automated quality gates, and foster a culture where quality is everyone's responsibility. Regular retrospectives and data analysis help identify areas for improvement."
+    },
+    "innovation": {
+      "question": "How do you stay innovative in your field?",
+      "answer": "I stay innovative by continuously learning about emerging technologies, attending industry conferences, participating in professional communities, and experimenting with new tools and methodologies. I encourage my teams to explore innovative approaches and allocate time for research and development. I also collaborate with other departments to understand their challenges and identify opportunities for innovative solutions."
+    }
+  }
+}
