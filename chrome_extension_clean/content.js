@@ -381,7 +381,7 @@
       }
     }
 
-    // Start the form filling process - ENHANCED WITH ERROR HANDLING
+    // Start the form filling process - ENHANCED WITH ERROR HANDLING AND AUTO-DEBUGGING
     function startFilling() {
       console.log('Job Application Auto-Filler: startFilling() called - checking if this is user-initiated...');
       
@@ -412,6 +412,10 @@
         // Show progress
         showProgress();
 
+        // AUTO-DEBUGGING: Show form analysis before filling
+        console.log('Job Application Auto-Filler: 🔍 AUTO-DEBUGGING: Analyzing form before filling...');
+        autoDebugForm();
+
         // Analyze the form and fill fields
         analyzeForm();
 
@@ -432,6 +436,83 @@
         hideProgress();
         showErrorMessage('Form filling failed: ' + error.message);
       }
+    }
+    
+    // AUTO-DEBUGGING FUNCTION - Automatically shows form analysis
+    function autoDebugForm() {
+      console.log('Job Application Auto-Filler: 🔍 === AUTO-DEBUGGING FORM ANALYSIS ===');
+      
+      // Find all form elements
+      const formElements = document.querySelectorAll('input, textarea, select, [contenteditable="true"]');
+      console.log('Job Application Auto-Filler: 🔍 Total form elements found:', formElements.length);
+      
+      // Group elements by type
+      const elementTypes = {};
+      formElements.forEach(element => {
+        const type = element.type || element.tagName.toLowerCase();
+        if (!elementTypes[type]) elementTypes[type] = [];
+        elementTypes[type].push(element);
+      });
+      
+      console.log('Job Application Auto-Filler: 🔍 Element types found:', elementTypes);
+      
+      // Special analysis for radio buttons
+      if (elementTypes.radio && elementTypes.radio.length > 0) {
+        console.log('Job Application Auto-Filler: 🔍 === RADIO BUTTON AUTO-ANALYSIS ===');
+        
+        const radioGroups = {};
+        elementTypes.radio.forEach(radio => {
+          const name = radio.name || 'unnamed';
+          if (!radioGroups[name]) radioGroups[name] = [];
+          radioGroups[name].push(radio);
+        });
+        
+        Object.entries(radioGroups).forEach(([name, radios]) => {
+          console.log(`Job Application Auto-Filler: 🔍 Radio Group: ${name} (${radios.length} options)`);
+          
+          // Get question text for first radio in group
+          const firstRadio = radios[0];
+          const questionText = getQuestionText(firstRadio);
+          console.log('Job Application Auto-Filler: 🔍 Question text:', questionText);
+          
+          if (questionText) {
+            const contextMatch = findContextAwareMatch(firstRadio, []);
+            console.log('Job Application Auto-Filler: 🔍 Context match would be:', contextMatch);
+            
+            if (contextMatch) {
+              const profileValue = getProfileValue(contextMatch);
+              console.log('Job Application Auto-Filler: 🔍 Profile value would be:', profileValue);
+              
+              // Check if this value matches any radio option
+              const matchingOptions = radios.filter(radio => {
+                const radioValue = radio.value.toLowerCase();
+                const radioText = (radio.textContent || radio.innerText || '').toLowerCase();
+                const targetValue = profileValue.toLowerCase();
+                
+                return radioValue === targetValue || 
+                       radioText.includes(targetValue) || 
+                       radioValue.includes(targetValue) ||
+                       targetValue.includes(radioValue);
+              });
+              
+              console.log('Job Application Auto-Filler: 🔍 Matching radio options:', matchingOptions.map(r => r.value));
+            }
+          }
+          
+          // Show all radio options
+          radios.forEach((radio, index) => {
+            console.log(`Job Application Auto-Filler: 🔍   Option ${index + 1}:`, {
+              value: radio.value,
+              text: radio.textContent || radio.innerText || 'N/A',
+              checked: radio.checked
+            });
+          });
+        });
+        
+        console.log('Job Application Auto-Filler: 🔍 === END RADIO BUTTON AUTO-ANALYSIS ===');
+      }
+      
+      console.log('Job Application Auto-Filler: 🔍 === END AUTO-DEBUGGING ===');
     }
     
     // Show error message to user
